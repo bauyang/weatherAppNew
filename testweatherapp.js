@@ -24,8 +24,8 @@ function getTimeZone(){
         weather = result.current.weather[0].main;
         date = moment().tz(result.timezone).format("dddd, MMMM Do YYYY, h:mm:ss a");
 
-        $("#city").append("City :" + city);
-        $("#date").append("Date :" + date);
+        $("#city").append("City : " + city);
+        $("#date").append("Date : " + date);
         $("#weather").append(weather + " with a temperature of " + temp +" F");
     })
 };
