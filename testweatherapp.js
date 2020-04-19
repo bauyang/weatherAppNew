@@ -18,15 +18,15 @@ function getWeather(callback){
 };
 
 function getTimeZone(){
-    $.get("https://api.openweathermap.org/data/2.5/onecall?lat="+ lat +"&lon="+ long +"&appid=549800580d6025f13c9688f4be033ff6", function(result){
+    $.get("https://api.openweathermap.org/data/2.5/onecall?lat="+ lat +"&lon="+ long +"&units=imperial&appid=549800580d6025f13c9688f4be033ff6", function(result){
         console.log(result);
-        temp = result.current.temp;
+        temp = Math.round(result.current.temp);
         weather = result.current.weather[0].main;
         date = moment().tz(result.timezone).format("dddd, MMMM Do YYYY, h:mm:ss a");
 
         $("#city").append("City :" + city);
         $("#date").append("Date :" + date);
-        $("#weather").append(weather + " with a temperature of " + temp);
+        $("#weather").append(weather + " with a temperature of " + temp +" F");
     })
 };
 
