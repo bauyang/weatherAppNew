@@ -26,7 +26,7 @@ function getTimeZone(){
 
         $("#city").append("City :" + city);
         $("#date").append("Date :" + date);
-        $("#weather").append(" Weather looking "  + weather);
+        $("#weather").append(weather + " with a temperature of " + temp);
     })
 };
 
